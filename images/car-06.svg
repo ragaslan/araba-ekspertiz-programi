@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153.81 232.5">
+    <defs>
+        <style>.cls-1{fill:none;}.cls-1,.cls-2,.cls-3{stroke:#1d1d1b;stroke-miterlimit:10;stroke-width:2px;}.cls-2{fill:#ea5b0c;}.cls-3{fill:#009fe3;}</style>
+    </defs>
+    <g id="katman_2" data-name="katman 2">
+        <g id="katman_1-2" data-name="katman 1">
+            <line class="cls-1" x1="12.31" y1="183.26" x2="0.97" y2="230.56"/>
+            <rect class="cls-2" x="12.31" y="46.24" width="129.19" height="137.02"/>
+            <line class="cls-1" x1="141.5" y1="184.2" x2="152.84" y2="231.5"/>
+            <line class="cls-1" x1="0.97" y1="1" x2="12.31" y2="48.3"/>
+            <line class="cls-3" x1="152.84" y1="1" x2="141.5" y2="48.3"/>
+            <line class="cls-1" x1="0.97" y1="1" x2="152.84" y2="1"/>
+            <line class="cls-1" x1="0.97" y1="230.56" x2="152.84" y2="231.5"/>
+        </g>
+    </g>
+</svg>
