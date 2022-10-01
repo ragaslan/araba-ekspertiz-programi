@@ -39,8 +39,8 @@
             <span class="detail">Değişen ve boya</span>
           </div>
         </div>
-        <a href="#" class="btn statusBtn" onClick="showStatus()">Durum</a>
-        <a href="#" class="btn resetBtn" onClick="clearAll()">Sıfırla</a>
+        <a href="#" class="btn statusBtn" onclick="showStatus()">Durum</a>
+        <a href="#" class="btn resetBtn" onclick="clearAll()">Sıfırla</a>
       </div>
       <div class="main">
         <div class="left section">
@@ -413,7 +413,7 @@
         </div>
       </div>
     </div>
-    <div class="outer">
+    <div class="outer" id="printableDiv">
       <div class="popup">
         <div class="closeIcon"><i class="fa-solid fa-xmark"></i></div>
         <div class="popupContainer">
@@ -430,10 +430,50 @@
             <div class="title">Değişen Parçalar</div>
             <div class="set-container" id="changed"></div>
           </div>
+          <button class="printBtn" onclick="printBtnRun()">Raporu Yazdır</button>
         </div>
       </div>
     </div>
     <script>
+      let printBtn = document.querySelector(".printBtn");
+
+      printBtn.onclick = function printBtnRun(e)  {
+        
+        let printWidth = window.innerWidth;
+        let printHeight = window.innerHeight;
+        
+        let printHtml = window.open('', 'PRINT', `height=${printHeight},width=${printWidth}`);
+        
+        printHtml.document.write('<html><head>');
+
+        let printableDiv = document.getElementById("printableDiv");
+        let btnHtml = printableDiv.firstElementChild.firstElementChild.nextElementSibling.lastElementChild;
+        printableDiv.firstElementChild.firstElementChild.nextElementSibling.lastElementChild.remove();
+        
+        
+        
+
+        
+        printHtml.document.write(printableDiv.innerHTML);
+
+        printHtml.document.write('</body></html>');
+    
+        printHtml.document.close(); 
+
+        printHtml.focus();
+    
+        printHtml.print();
+        printableDiv.firstElementChild.firstElementChild.nextElementSibling.appendChild(btnHtml);
+        
+
+        printHtml.close();
+        
+        
+    
+    
+      
+      }
+      
       let partStates = [
         {
           partId: 1,
@@ -685,6 +725,8 @@
         // orjinal state i başlagnıcdaki halinin kopyası ile güncelledik
         partStates = defaultPartStates;
       };
+
+      
     </script>
   </body>
 </html>
